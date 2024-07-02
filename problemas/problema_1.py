@@ -28,7 +28,7 @@ def ler_fasta(arquivo):
             sequencias.append(Sequencia(nome, sequencia))
     return sequencias
 
-# Exemplo de uso
+# Exemplo de uso##  
 arquivo_fasta = '\arquivos\Flaviviridae-genomes.fasta'
 bases_nucleotideos = ['A', 'T', 'C', 'G']
 
