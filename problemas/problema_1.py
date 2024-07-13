@@ -29,7 +29,7 @@ def ler_fasta(arquivo_fasta):
     return sequencias
 
 # Exemplo de uso##  
-arquivo_fasta = 'arquivos\Flaviviridae-genomes.fasta'
+arquivo_fasta = 'arquivos/Flaviviridae-genomes.fasta'
 bases_nucleotideos = ['A', 'T', 'C', 'G']
 
 sequencias = ler_fasta(arquivo_fasta)
