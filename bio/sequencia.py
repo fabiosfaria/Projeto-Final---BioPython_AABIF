@@ -26,6 +26,13 @@ class Sequencia:
     def __getitem__(self, index):
         return self.sequencia.__getitem__(index)
 
+    def transcricao(self):
+        sequencia_transcrita = ""
+        
+        #
+        
+        return sequencia_transcrita
+
     def traducao(self, stop_codon):
         sequencia_proteina = ""
         
@@ -41,7 +48,7 @@ class Sequencia:
             
             if trinca in DNA_PARA_AMINOACIDO: # verificando se contem aquela trinca dentro de DNA_AMINOACIDO 
                 sequencia_proteina += DNA_PARA_AMINOACIDO[trinca]
-            elif (trinca in (DNA_PARA_AMINOACIDO or DNA_STOP_CODONS)) == False: # verificando se a trinca nao está dentro de AMINOACIDO ou STOP_CODON 
+            elif trinca not in DNA_PARA_AMINOACIDO: # verificando se a trinca nao está dentro de DNA_AMINOACIDO  
                 sequencia_proteina += "X"
         
         return sequencia_proteina
