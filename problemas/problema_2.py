@@ -16,7 +16,7 @@ for sequencia_organismo in sequencias:
     proteina_organismo = sequencia_classe.traducao(stop_codon=False)
     print(proteina_organismo + "\n")
     
-    sequencia_classe = "" # zerando os valores 
+    sequencia_classe = "" # Zerando os valores 
     proteina_organismo = ""
 
     

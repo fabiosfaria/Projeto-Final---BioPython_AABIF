@@ -1,15 +1,8 @@
-from Bio import SeqIO, Seq
-
-class Sequencia:
-    def __init__(self, nome, sequencia):
-        self.nome = nome
-        self.sequencia = sequencia
-
-    def calcular_percentual(self, bases):
-        total_bases = len(self.sequencia)
-        base_counts = {base: self.sequencia.count(base) for base in bases}
-        percentuais = {base: (count / total_bases) * 100 for base, count in base_counts.items()}
-        return percentuais
+import os
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from bio.ler_fasta import ler_fasta
+from bio.sequencia import Sequencia 
 
 def ler_fasta(arquivo_fasta):
     sequencias = []

@@ -26,6 +26,12 @@ class Sequencia:
     def __getitem__(self, index):
         return self.sequencia.__getitem__(index)
 
+    def calcular_percentual(self, bases):
+            total_bases = len(self.sequencia)
+            base_counts = {base: self.sequencia.count(base) for base in bases}
+            percentuais = {base: (count / total_bases) * 100 for base, count in base_counts.items()}
+            return percentuais
+
     def transcricao(self):
         sequencia_transcrita = ""
         
@@ -49,8 +55,8 @@ class Sequencia:
                     return sequencia_proteina
                     break
             
-            if trinca in DNA_PARA_AMINOACIDO: # verificando se contem aquela trinca dentro de DNA_AMINOACIDO 
+            if trinca in DNA_PARA_AMINOACIDO: # Verificando se contem aquela trinca dentro de DNA_AMINOACIDO 
                 sequencia_proteina += DNA_PARA_AMINOACIDO[trinca]
-            elif trinca not in DNA_PARA_AMINOACIDO: # verificando se a trinca nao está dentro de DNA_AMINOACIDO  
+            elif trinca not in DNA_PARA_AMINOACIDO: # Verificando se a trinca nao está dentro de DNA_AMINOACIDO  
                 sequencia_proteina += "X"
         return sequencia_proteina
