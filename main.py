@@ -8,15 +8,16 @@ from bio.sequencia import Sequencia
 arquivo_fasta = 'arquivos/Flaviviridae-genomes.fasta'
 sequencias = ler_fasta(arquivo_fasta) 
 
-#print(sequencias)
-
-# LE TODO O ARQUIVO COM TODAS AS SEQUENCIAS 
-#for seq in sequencias:
-    #print(f"Sequencia: {seq.nome}")
-    #print(f"ID Sequencia: {seq.sequencia}") #pegando cada sequencia 
-
 seq_unica = sequencias[1].sequencia
+#print(seq_unica)
 
+# Testando PROBLEMA-2
 sequencia_classe = Sequencia(sequencias[1].nome, seq_unica) 
-resultado_classe = sequencia_classe.traducao(stop_codon=False)
-print(resultado_classe)
+#resultado_classe = sequencia_classe.traducao(stop_codon=False)
+#print(resultado_classe)
+
+# Testando Metodo TRANSCRICAO 
+resultado_classe = sequencia_classe.transcricao()
+#print(resultado_classe)
+
+

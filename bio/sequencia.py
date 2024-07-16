@@ -29,8 +29,11 @@ class Sequencia:
     def transcricao(self):
         sequencia_transcrita = ""
         
-        #
-        
+        for base in self.sequencia:
+            if base == "T":
+                sequencia_transcrita += "U" # Inserindo a Uracila no lugar da Timina
+            else:
+                sequencia_transcrita += base    
         return sequencia_transcrita
 
     def traducao(self, stop_codon):
@@ -50,5 +53,4 @@ class Sequencia:
                 sequencia_proteina += DNA_PARA_AMINOACIDO[trinca]
             elif trinca not in DNA_PARA_AMINOACIDO: # verificando se a trinca nao está dentro de DNA_AMINOACIDO  
                 sequencia_proteina += "X"
-        
         return sequencia_proteina
