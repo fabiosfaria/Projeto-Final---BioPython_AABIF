@@ -11,9 +11,9 @@ sequencia_classe = ""
 proteina_organismo = "" 
 
 for sequencia_organismo in sequencias:
-    print(f"ORGANISMO: {sequencia_organismo.nome}, PROTEINA => ")
+    print(f"Organismo: {sequencia_organismo.nome}, \nProteína: ")
     sequencia_classe = Sequencia(sequencia_organismo.nome, sequencia_organismo.sequencia)
-    proteina_organismo = sequencia_classe.traducao(stop_codon=False)
+    proteina_organismo = sequencia_classe.traducao(to_stop=False)
     print(proteina_organismo + "\n")
     
     sequencia_classe = "" # Zerando os valores 

@@ -42,21 +42,21 @@ class Sequencia:
                 sequencia_transcrita += base    
         return sequencia_transcrita
 
-    def traducao(self, stop_codon):
+    def traducao(self, to_stop):
         sequencia_proteina = ""
         
         for i in range(0, len(self.sequencia), 3):
             trinca = self.sequencia[i: i+3]  
             
             if trinca in DNA_STOP_CODONS:
-                if stop_codon == False:
+                if to_stop == False:
                     sequencia_proteina += "*"
-                elif stop_codon == True:
+                elif to_stop == True:
                     return sequencia_proteina
                     break
-            
-            if trinca in DNA_PARA_AMINOACIDO: # Verificando se contem aquela trinca dentro de DNA_AMINOACIDO 
-                sequencia_proteina += DNA_PARA_AMINOACIDO[trinca]
-            elif trinca not in DNA_PARA_AMINOACIDO: # Verificando se a trinca nao está dentro de DNA_AMINOACIDO  
-                sequencia_proteina += "X"
+            else: 
+                if trinca in DNA_PARA_AMINOACIDO: # Verificando se contém aquela trinca dentro de DNA_AMINOACIDO 
+                    sequencia_proteina += DNA_PARA_AMINOACIDO[trinca]
+                else: # SE a trinca NÃO está dentro de DNA_AMINOACIDO E STOP_CODON 
+                    sequencia_proteina += "X"
         return sequencia_proteina
