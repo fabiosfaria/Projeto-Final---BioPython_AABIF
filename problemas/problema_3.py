@@ -1,30 +1,36 @@
-from Bio import SeqIO
-import pandas as pd
+import os
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from bio.ler_fasta import ler_fasta
 
-def verificar_mutacao(sequencia, posicao_da_mutacao, nucleotideo_original, nucleotideo_mutado):
-    if len(sequencia) > posicao_da_mutacao:
-        if sequencia[posicao_da_mutacao] == nucleotideo_mutado:
-            return True
-        elif sequencia[posicao_da_mutacao] == nucleotideo_original:
-            return False
-    return False
+arquivo_fasta = 'arquivo/Flaviviridae-genomes.fasta'
+sequencias = ler_fasta(arquivo_fasta)
 
-def analisar_mutacoes(arquivo_fasta, posicao_da_mutacao, nucleotideo_original, nucleotideo_mutado):
-    resultados = []
+sequencias_com_mutacao = sequencias_sem_mutacao = {
+    "id": "",
+    "nome": "",
+    "sequencia": ""
+}
 
-    for record in SeqIO.parse(arquivo_fasta, "fasta"):
-        id_sequencia = record.id
-        sequencia = str(record.seq)
+for cada_sequencia in sequencias:
+    if cada_sequencia.sequencia[999] == "G": 
+        sequencias_com_mutacao["id"] += cada_sequencia.id
+        sequencias_com_mutacao["nome"] += cada_sequencia.nome
+        sequencias_com_mutacao["sequencia"] += cada_sequencia.sequencia
         
-        possui_mutacao = verificar_mutacao(sequencia, posicao_da_mutacao, nucleotideo_original, nucleotideo_mutado)
-        
-        resultados.append({
-            "ID Sequência": id_sequencia,
-            "Possui Mutação": possui_mutacao
-        })
-    
-  
-    df_resultados = pd.DataFrame(resultados)
-    df_resultados.to_csv("relatorio_mutacoes.csv", index=False)
-    print(df_resultados)
+    else:
+        sequencias_sem_mutacao["id"] += cada_sequencia.id
+        sequencias_sem_mutacao["nome"] += cada_sequencia.nome
+        sequencias_sem_mutacao["sequencia"] += cada_sequencia.sequencia
 
+#gera_relatorio_de_mutacoes(sequencias_sem_mutacao)
+#print("Sequências COM Mutação")
+
+for i in sequencias_sem_mutacao:
+    print(f'{i["id"] + " " + i["nome"]}')
+    print()
+    break
+    #print(sequencias_sem_mutacao["sequencia"])
+
+#print(sequencias_sem_mutacao)
+print("Sequências SEM Mutação")        
