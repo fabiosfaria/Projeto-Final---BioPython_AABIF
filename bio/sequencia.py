@@ -25,6 +25,15 @@ class Sequencia:
 
     def __getitem__(self, index):
         return self.sequencia.__getitem__(index)
+    
+    
+    def sequencia_complementar(self):
+        #
+        return True
+    
+    def sequencia_complementar_reversa(self):
+        #
+        return True
 
     def calcular_percentual(self, bases):
             total_bases = len(self.sequencia)
