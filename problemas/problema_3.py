@@ -1,3 +1,4 @@
+""" 
 import os
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -28,9 +29,40 @@ for cada_sequencia in sequencias:
 
 for i in sequencias_sem_mutacao:
     print(f'{i["id"] + " " + i["nome"]}')
-    print()
     break
     #print(sequencias_sem_mutacao["sequencia"])
 
 #print(sequencias_sem_mutacao)
 print("Sequências SEM Mutação")        
+ """
+from Bio import SeqIO
+
+def verificar_mutacao(sequencia, posicao, nucleotideo_original, nucleotideo_mutado):
+    # Verifica se a mutação está presente na posição especificada
+    return sequencia[posicao - 1] == nucleotideo_mutado
+
+def gerar_relatorio(arquivo_fasta, posicao, nucleotideo_original, nucleotideo_mutado):
+    with open("arquivos/Flaviviridae-genomes.fasta", "r") as handle:
+        sequencias = list(SeqIO.parse(handle, "fasta"))
+    
+    relatorio = []
+    for seq_record in sequencias:
+        id_seq = seq_record.id
+        sequencia = str(seq_record.seq)
+        if verificar_mutacao(sequencia, posicao, nucleotideo_original, nucleotideo_mutado):
+            relatorio.append(f"Sequência {id_seq}: Mutação presente")
+        else:
+            relatorio.append(f"Sequência {id_seq}: Mutação ausente")
+    
+    return relatorio
+
+# Parâmetros
+arquivo_fasta = "genomas_virais.fasta"
+posicao = 1000
+nucleotideo_original = "A"
+nucleotideo_mutado = "G"
+
+# Gerar relatório
+relatorio = gerar_relatorio(arquivo_fasta, posicao, nucleotideo_original, nucleotideo_mutado)
+for linha in relatorio:
+    print(linha)
