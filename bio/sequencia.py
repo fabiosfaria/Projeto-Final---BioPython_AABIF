@@ -27,9 +27,23 @@ class Sequencia:
         return self.sequencia.__getitem__(index)
     
     
-    def sequencia_complementar(self):
-        #
-        return True
+    def sequencia_complementar(self, sequencia):
+        # Escreva seu código aqui
+        bases_dicionario = {
+            "A": "T",
+            "C": "G",
+            "T": "A",
+            "G": "C",
+        }
+        sequencia_complementar = ""
+        
+        # Fazer a complementacao da fita de DNA >> Ex.: ACTG [sequencia] > TGAC [sequencia_complementar]
+        for base in sequencia:
+            if base in bases_dicionario:
+                # Continua com seu codigo daqui 
+        
+        return sequencia_complementar
+    
     
     def sequencia_complementar_reversa(self):
         #
