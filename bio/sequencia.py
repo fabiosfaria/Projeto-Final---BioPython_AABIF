@@ -28,9 +28,18 @@ class Sequencia:
     
     
     def sequencia_complementar(self):
-        #
-        return True
-    
+            bases_dicionario = {
+            "A": "T",
+            "C": "G",
+            "T": "A",
+            "G": "C",
+            }
+            sequencia_complementar = ""
+            for base in self.sequencia:
+                if base in bases_dicionario:
+                    sequencia_complementar += bases_dicionario[base]
+            return sequencia_complementar
+            
     def sequencia_complementar_reversa(self):
         #
         return True
