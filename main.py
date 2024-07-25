@@ -25,3 +25,12 @@ resultado_classe = sequencia_classe.transcricao()
 
 # Testando PROBLEMA-3 => 
 
+# ---------------------------------------------------------------
+
+# Testando Metodos de sequencias => 
+objeto_sequencia = Sequencia("TESTE ISADORA", "ACTG")
+resultado_sequencia_complementar = objeto_sequencia.sequencia_complementar()
+#print("SEQUENCIA COMPLEMENTAR => ",resultado_sequencia_complementar)
+
+resultado_sequencia_complementar_reversa = objeto_sequencia.sequencia_complementar_reversa()
+print("\n SEQUENCIA COMPLEMENTAR REVERSA => ", resultado_sequencia_complementar_reversa)

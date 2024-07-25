@@ -40,9 +40,25 @@ class Sequencia:
                     sequencia_complementar += bases_dicionario[base]
             return sequencia_complementar
             
+            
     def sequencia_complementar_reversa(self):
-        #
-        return True
+        sequencia_complementar = self.sequencia_complementar()
+        sequencia_complementar_reversa = ""
+        bases = len(sequencia_complementar)
+        
+        while(bases > 0):
+            bases -= 1
+            sequencia_complementar_reversa += sequencia_complementar[bases]
+            print("ENTROU EM WHILE")
+            
+        #for base in range(tamanho, sequencia_complementar, 0):
+            #print(sequencia_reversa[base])
+            #sequencia_complementar_reversa += sequencia_complementar[base]
+         
+        return sequencia_complementar_reversa
+
+
+
 
     def calcular_percentual(self, bases):
             total_bases = len(self.sequencia)
