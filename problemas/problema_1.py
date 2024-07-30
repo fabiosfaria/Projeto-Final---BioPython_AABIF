@@ -1,27 +1,10 @@
 import os
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from bio.ler_fasta import ler_fasta
 from bio.sequencia import Sequencia 
+from bio.ler_fasta import ler_fasta 
 
-def ler_fasta(arquivo_fasta):
-    sequencias = []
-    with open(arquivo_fasta, 'r') as f:
-        linhas = f.readlines()
-        nome, sequencia = None, ''
-        for linha in linhas:
-            if linha.startswith('>'):
-                if nome and sequencia:
-                    sequencias.append(Sequencia(nome, sequencia))
-                nome = linha.strip()[1:]
-                sequencia = ''
-            else:
-                sequencia += linha.strip()
-        if nome and sequencia:
-            sequencias.append(Sequencia(nome, sequencia))
-    return sequencias
 
-# Exemplo de uso##  
 arquivo_fasta = 'arquivos/Flaviviridae-genomes.fasta'
 bases_nucleotideos = ['A', 'T', 'C', 'G']
 

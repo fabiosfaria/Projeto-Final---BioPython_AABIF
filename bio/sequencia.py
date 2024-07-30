@@ -4,8 +4,7 @@ from bio.constantes import DNA_STOP_CODONS
 
 
 class Sequencia:
-    def __init__(self, nome, sequencia):
-        self.nome = nome
+    def __init__(self, sequencia):
         self.sequencia = sequencia
 
     def __repr__(self):
@@ -49,15 +48,7 @@ class Sequencia:
         while(bases > 0):
             bases -= 1
             sequencia_complementar_reversa += sequencia_complementar[bases]
-            print("ENTROU EM WHILE")
-            
-        #for base in range(tamanho, sequencia_complementar, 0):
-            #print(sequencia_reversa[base])
-            #sequencia_complementar_reversa += sequencia_complementar[base]
-         
         return sequencia_complementar_reversa
-
-
 
 
     def calcular_percentual(self, bases):

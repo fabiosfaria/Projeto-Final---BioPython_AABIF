@@ -12,7 +12,7 @@ proteina_organismo = ""
 
 for sequencia_organismo in sequencias:
     print(f"Organismo: {sequencia_organismo.nome}, \nProteína: ")
-    sequencia_classe = Sequencia(sequencia_organismo.nome, sequencia_organismo.sequencia)
+    sequencia_classe = Sequencia(sequencia_organismo.sequencia)
     proteina_organismo = sequencia_classe.traducao(to_stop=False)
     print(proteina_organismo + "\n")
     

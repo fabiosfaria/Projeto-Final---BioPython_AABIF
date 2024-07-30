@@ -18,6 +18,6 @@ def sequencias_mutadas(sequencias):
             print(f'NOME => {cada_sequencia.nome}')
             print("\n")
 
-arquivo_fasta = 'arquivo/Flaviviridae-genomes.fasta'
+arquivo_fasta = 'arquivos/Flaviviridae-genomes.fasta'
 sequencias = ler_fasta(arquivo_fasta)
 sequencias_mutadas(sequencias)
