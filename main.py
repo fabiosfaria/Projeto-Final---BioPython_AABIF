@@ -40,6 +40,6 @@ print(f'\nResultado do Método sequencia_complementar_reversa() na Sequencia Peq
 # ---------------------------------------------------------------
 
 # Testando PROBLEMA-3 => 
-sequencias_mutadas(sequencias)
+#sequencias_mutadas(sequencias)
 
 
