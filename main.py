@@ -13,8 +13,8 @@ seq_unica = sequencias[1].sequencia
 sequencia_classe = Sequencia(seq_unica) 
 resultado_Problema_2_F = sequencia_classe.traducao(to_stop=False)
 resultado_Problema_2_T = sequencia_classe.traducao(to_stop=True)
-#print(f'\nResultado do PROBLEMA-2 com o atributo To_Stop FALSE =>\n\n{resultado_Problema_2_F}')
-#print(f'\nResultado do PROBLEMA-2 com o atributo To_Stop TRUE =>\n\n{resultado_Problema_2_T}')
+print(f'\nResultado do PROBLEMA-2 com o atributo To_Stop FALSE =>\n\n{resultado_Problema_2_F}')
+print(f'\nResultado do PROBLEMA-2 com o atributo To_Stop TRUE =>\n\n{resultado_Problema_2_T}')
 
 # ---------------------------------------------------------------
 
@@ -40,6 +40,6 @@ print(f'\nResultado do Método sequencia_complementar_reversa() na Sequencia Peq
 # ---------------------------------------------------------------
 
 # Testando PROBLEMA-3 => 
-#sequencias_mutadas(sequencias)
+sequencias_mutadas(sequencias)
 
 
